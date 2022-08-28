@@ -7,8 +7,11 @@ root.title("Converter km to miles")
 root.resizable(width=False, height=False)
 
 def convert():
-    x = float(int(ent1.get()) * 0.62137)
-    mph.config(text=x)
+    try:
+        x = float(int(ent1.get()) * 0.62137)
+        mph.config(text=x)
+    except:
+        mph.config(text="ERROR")
 
 lb1 = Label(root, text=f"Converter from \nkilometers to miles", font=("Arial", 22))
 lb1.pack()
